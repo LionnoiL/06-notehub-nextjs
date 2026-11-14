@@ -3,6 +3,7 @@ import type { Note } from "@/types/note";
 import { deleteNote } from "@/lib/noteService";
 import { QUERY_KEY_NOTES } from "@/constants";
 import css from "./NoteList.module.css";
+import Link from "next/link";
 
 interface NoteListProps {
   notes: Note[];
@@ -26,6 +27,9 @@ const NoteList = ({ notes }: NoteListProps) => {
           <p className={css.content}>{note.content}</p>
           <div className={css.footer}>
             <span className={css.tag}>{note.tag}</span>
+            <Link className={css.link} href={`/notes/${note.id}`}>
+              View details
+            </Link>
             <button className={css.button} onClick={() => mutate(note.id)}>
               Delete
             </button>
