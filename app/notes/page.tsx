@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import { connection } from "next/server";
 import { getNotes } from "@/lib/api";
 import NotesClient from "./Notes.client";
 import { QUERY_KEY_NOTES } from "@/constants";
@@ -10,11 +9,9 @@ import {
 } from "@tanstack/react-query";
 
 async function NotesData() {
-  await connection();
-
   const queryClient = new QueryClient();
 
-  await queryClient.query({
+  await queryClient.prefetchQuery({
     queryKey: [QUERY_KEY_NOTES, "", 1],
     queryFn: () => getNotes("", 1),
   });
