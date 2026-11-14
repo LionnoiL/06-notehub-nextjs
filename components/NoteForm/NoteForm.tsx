@@ -6,7 +6,7 @@ import * as Yup from "yup";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import type { Note } from "@/types/note";
 import { QUERY_KEY_NOTES, TAGS } from "@/constants";
-import { createNote } from "@/lib/noteService";
+import { createNote } from "@/lib/api";
 
 interface NoteFormProps {
   onCloseModal: () => void;

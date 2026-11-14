@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { connection } from "next/server";
-import { getNotes } from "@/lib/noteService";
+import { getNotes } from "@/lib/api";
 import NotesClient from "./Notes.client";
 import { QUERY_KEY_NOTES } from "@/constants";
 import {

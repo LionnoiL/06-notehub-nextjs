@@ -9,7 +9,7 @@ import { useDebounce } from "use-debounce";
 import Modal from "@/components/Modal/Modal";
 import { Button } from "antd";
 
-import { getNotes } from "@/lib/noteService";
+import { getNotes } from "@/lib/api";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import { QUERY_KEY_NOTES } from "@/constants";
 
